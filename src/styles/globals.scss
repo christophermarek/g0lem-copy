@@ -1,0 +1,305 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans&display=swap');
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+}
+
+.bot-table {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+  column-gap: 1vw;
+}
+.row {
+  column-gap: 1vw;
+}
+* {
+  box-sizing: border-box;
+}
+
+.app {
+  // background-color: #010409;
+
+  /* color: #cdd9e5; SAVE THIS COLOR FOR SECONDARY*/
+  // color: #cdd9e5;
+  font-family: 'IBM Plex Sans';
+  // font-size: 1.8rem;
+  // color: white;
+}
+
+// app theme
+
+:root {
+  --primary: #02040a;
+  --secondary: #272b33;
+  --accent: #79828e;
+  --tertiary: #0a0c10;
+
+  color-scheme: dark;
+}
+
+.bg-primary {
+  background-color: var(--primary);
+}
+.bg-secondary {
+  background-color: var(--secondary);
+}
+.bg-tertiary {
+  background-color: var(--tertiary);
+}
+
+.noBottomBorder {
+  border-bottom: none;
+}
+.noTopBorder {
+  border-top: none;
+}
+
+.inactive {
+  pointer-events: none;
+}
+
+.column > * {
+  height: 100vh;
+  height: 100vh;
+  overflow-y: scroll;
+}
+
+//
+
+body {
+  /* #F4FFD3  i like this color too*/
+  background-color: var(--primary);
+  min-height: 100vh;
+  padding: 0;
+}
+
+.landingContainer {
+  background-color: white;
+  outline: solid black 2px;
+  width: fit-content;
+  box-shadow: 10px 5px 5px black;
+}
+
+/* In your css file where you want to use the font */
+.landingButton {
+  background-color: #f0d78f;
+  border: none;
+  border-radius: 0;
+  color: black;
+  padding-inline: 5vw;
+  font-family: 'BebasNeue';
+  font-size: 3rem;
+  width: fit-content;
+  height: fit-content;
+  text-shadow: 1px 1px black;
+}
+
+.specialLandingText {
+  font-family: 'Bebas Neue';
+  font-size: 2rem;
+  font-weight: 200;
+  color: black;
+  text-shadow: 1px 1px 1px black;
+  text-transform: uppercase;
+  letter-spacing: 0.01rem;
+}
+.smaller {
+  font-size: 2.5rem !important;
+}
+
+.title {
+  font-family: 'Raleway', monospace;
+  font-size: 6.55rem;
+  font-weight: 100;
+  color: black;
+  text-shadow: 6px -2px 1px white;
+}
+
+/* start of glitchAndJerk animation */
+.glitchAndJerk {
+  animation: glitch 1s linear infinite;
+}
+
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, -2px) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
+}
+
+.glitchAndJerk:before,
+.glitchAndJerk:after {
+  content: attr(title);
+  position: absolute;
+  left: 0;
+}
+
+.glitchAndJerk:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
+  }
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
+  }
+}
+
+.glitchAndJerk:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0);
+  }
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
+  }
+}
+
+/* end of glitchAndJerk */
+
+/* tabs */
+.tabContainer {
+  .tabButton {
+    //     display: flex;
+    //     font-size: 3rem;
+    //     // background-color: #0a0c10;
+    //     // border: 1px solid #747c88;
+    //     // border-bottom: none;
+    //     /* border-radius: 0.5rem; */
+    //     // align-items: center;
+    //     // justify-content: space-around;
+    //     // these icons are all different sizes from FontAwesome
+    .tabIcon {
+      width: 8vw;
+      height: 8vw;
+    }
+    .tabIcon:first-child {
+      margin-right: 5vw;
+    }
+    .tabIcon:last-child {
+      margin-left: 5vw;
+    }
+    .chevron {
+      width: 5.5vw !important;
+    }
+    .lock {
+      width: 6vw !important;
+    }
+    .tools {
+      width: 6vw !important;
+    }
+  }
+}
